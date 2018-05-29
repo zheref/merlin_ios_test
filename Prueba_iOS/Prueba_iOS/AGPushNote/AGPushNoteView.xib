@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1212" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="AGPushNoteView">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PVX-kT-5Bb" userLabel="Container View">
+                    <rect key="frame" x="0.0" y="10" width="320" height="50"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0E0-23-y3T" userLabel="icon ImageView">
+                            <rect key="frame" x="5" y="5" width="40" height="40"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="40" id="8wK-ki-ecI"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.29999999999999999" translatesAutoresizingMaskIntoConstraints="NO" id="X8P-Ol-oNG" userLabel="message Label">
+                            <rect key="frame" x="50" y="5" width="229" height="40"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cZn-0H-s1T" userLabel="dismiss Button">
+                            <rect key="frame" x="270" y="0.0" width="50" height="50"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="50" id="pgR-FB-pTv"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <state key="normal" title="X">
+                                <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="closeActionItem:" destination="iN0-l3-epB" eventType="touchUpInside" id="fhp-yF-VgW"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstItem="0E0-23-y3T" firstAttribute="leading" secondItem="PVX-kT-5Bb" secondAttribute="leading" constant="5" id="9wq-ng-hWE"/>
+                        <constraint firstAttribute="bottom" secondItem="X8P-Ol-oNG" secondAttribute="bottom" constant="5" id="K4r-Dg-2Gn"/>
+                        <constraint firstItem="cZn-0H-s1T" firstAttribute="top" secondItem="PVX-kT-5Bb" secondAttribute="top" id="MN2-N9-6BK"/>
+                        <constraint firstAttribute="trailing" secondItem="cZn-0H-s1T" secondAttribute="trailing" id="Oh5-cS-Pqo"/>
+                        <constraint firstAttribute="bottom" secondItem="0E0-23-y3T" secondAttribute="bottom" constant="5" id="l0h-8N-5Ty"/>
+                        <constraint firstAttribute="trailing" secondItem="X8P-Ol-oNG" secondAttribute="trailing" constant="41" id="mfU-EC-Eyw"/>
+                        <constraint firstItem="X8P-Ol-oNG" firstAttribute="top" secondItem="PVX-kT-5Bb" secondAttribute="top" constant="5" id="pa4-Cw-8gE"/>
+                        <constraint firstItem="X8P-Ol-oNG" firstAttribute="leading" secondItem="0E0-23-y3T" secondAttribute="trailing" constant="5" id="u3d-zF-Isl"/>
+                        <constraint firstItem="0E0-23-y3T" firstAttribute="top" secondItem="PVX-kT-5Bb" secondAttribute="top" constant="5" id="uh5-N1-YEr"/>
+                        <constraint firstAttribute="bottom" secondItem="cZn-0H-s1T" secondAttribute="bottom" id="zFt-hu-exL"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="0.72156862749999995" green="0.91372549020000005" blue="0.52549019610000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <gestureRecognizers/>
+            <constraints>
+                <constraint firstItem="PVX-kT-5Bb" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="KvJ-nc-EH4"/>
+                <constraint firstItem="PVX-kT-5Bb" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="PJ4-xs-j00"/>
+                <constraint firstAttribute="trailing" secondItem="PVX-kT-5Bb" secondAttribute="trailing" id="a1W-2z-1NZ"/>
+                <constraint firstAttribute="bottom" secondItem="PVX-kT-5Bb" secondAttribute="bottom" id="dgq-Og-KoY"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="containerViewBottomConst" destination="dgq-Og-KoY" id="X8N-gr-9wH"/>
+                <outlet property="containerViewUpConst" destination="PJ4-xs-j00" id="QvS-KU-PvV"/>
+                <outlet property="dismissButton" destination="cZn-0H-s1T" id="L1u-va-xI1"/>
+                <outlet property="iconImageView" destination="0E0-23-y3T" id="i7q-1y-DtP"/>
+                <outlet property="iconImageWidthConst" destination="8wK-ki-ecI" id="U7K-3S-N2F"/>
+                <outlet property="messageLabel" destination="X8P-Ol-oNG" id="hhO-vo-FWa"/>
+                <outletCollection property="gestureRecognizers" destination="V0o-yK-qVt" appends="YES" id="e4c-1d-ewO"/>
+            </connections>
+            <point key="canvasLocation" x="332" y="-78"/>
+        </view>
+        <tapGestureRecognizer id="V0o-yK-qVt">
+            <connections>
+                <action selector="messageTapAction" destination="iN0-l3-epB" id="ujY-wE-4MH"/>
+            </connections>
+        </tapGestureRecognizer>
+    </objects>
+</document>
