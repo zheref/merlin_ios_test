@@ -11,7 +11,5 @@ DerivedData/
 xcuserdata/
 .DS_Store
 .build/
-Pods/
-Podfile.lock
 Docs
 
