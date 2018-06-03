@@ -52,11 +52,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if window?.traitCollection.userInterfaceIdiom == UIUserInterfaceIdiom.pad ||
            (window?.traitCollection.userInterfaceIdiom == UIUserInterfaceIdiom.phone && window?.traitCollection.displayScale == 3.0)
         {
-            return UIInterfaceOrientationMask.all;
+            return UIInterfaceOrientationMask.all
         }
         else
         {
-            return UIInterfaceOrientationMask.portrait;
+            return UIInterfaceOrientationMask.portrait
         }
     }
 }

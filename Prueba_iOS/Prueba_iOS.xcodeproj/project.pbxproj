@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		2B79913920C49F9700A51A6F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B79913820C49F9700A51A6F /* Constants.swift */; };
 		CC766651AAEA9F81E52B75C1 /* Pods_Prueba_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 530E9E4678824283C33423FC /* Pods_Prueba_iOS.framework */; };
-		D7DEDA16203028D300B8934A /* CategoriesTableViewIpadController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7DEDA15203028D300B8934A /* CategoriesTableViewIpadController.swift */; };
 		DD3DD7B9A7E79C2705C6F0F6 /* Pods_Prueba_iOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAC4204D63860C38933C7494 /* Pods_Prueba_iOSTests.framework */; };
 		E6BAC61C72B8B5584532FE15 /* Pods_Prueba_iOSUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B055BF33B6B25FD002F0C0CA /* Pods_Prueba_iOSUITests.framework */; };
 		F92120F91E61DBCF0041DF8B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F92120F81E61DBCF0041DF8B /* AppDelegate.swift */; };
@@ -34,7 +33,6 @@
 		F9787D3F1E651F3800778A4E /* AGPushNoteView.m in Sources */ = {isa = PBXBuildFile; fileRef = F9787D3D1E651F3800778A4E /* AGPushNoteView.m */; };
 		F9787D401E651F3800778A4E /* AGPushNoteView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9787D3E1E651F3800778A4E /* AGPushNoteView.xib */; };
 		F9787D441E661DD500778A4E /* UIViewController+BackButtonHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = F9787D431E661DD500778A4E /* UIViewController+BackButtonHandler.m */; };
-		F982F5EC202FB8200065DE42 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F982F5EB202FB8200065DE42 /* Main_iPad.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,7 +60,6 @@
 		42A1522905480100EB16E276 /* Pods-Prueba_iOSUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Prueba_iOSUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Prueba_iOSUITests/Pods-Prueba_iOSUITests.release.xcconfig"; sourceTree = "<group>"; };
 		530E9E4678824283C33423FC /* Pods_Prueba_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Prueba_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B055BF33B6B25FD002F0C0CA /* Pods_Prueba_iOSUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Prueba_iOSUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D7DEDA15203028D300B8934A /* CategoriesTableViewIpadController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesTableViewIpadController.swift; sourceTree = "<group>"; };
 		D904E6F3B553CA16C46BEB20 /* Pods-Prueba_iOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Prueba_iOSTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Prueba_iOSTests/Pods-Prueba_iOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		F2C5C1F1F02D820C25BD1E40 /* Pods-Prueba_iOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Prueba_iOSTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Prueba_iOSTests/Pods-Prueba_iOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		F92120F51E61DBCF0041DF8B /* Prueba_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Prueba_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -96,7 +93,6 @@
 		F9787D411E65203900778A4E /* PruebaiOS-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PruebaiOS-Bridging-Header.h"; sourceTree = "<group>"; };
 		F9787D421E661DD500778A4E /* UIViewController+BackButtonHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+BackButtonHandler.h"; sourceTree = "<group>"; };
 		F9787D431E661DD500778A4E /* UIViewController+BackButtonHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+BackButtonHandler.m"; sourceTree = "<group>"; };
-		F982F5EB202FB8200065DE42 /* Main_iPad.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main_iPad.storyboard; sourceTree = "<group>"; };
 		FAC4204D63860C38933C7494 /* Pods_Prueba_iOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Prueba_iOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -244,7 +240,6 @@
 				F9787D2B1E651A9000778A4E /* AppsTableViewController.swift */,
 				F9787D2D1E651AA900778A4E /* AppsCollectionViewController.swift */,
 				F9787D2F1E651AFA00778A4E /* DetailTableViewController.swift */,
-				D7DEDA15203028D300B8934A /* CategoriesTableViewIpadController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -262,7 +257,6 @@
 			isa = PBXGroup;
 			children = (
 				F92120FC1E61DBD00041DF8B /* Main.storyboard */,
-				F982F5EB202FB8200065DE42 /* Main_iPad.storyboard */,
 				F92121011E61DBD00041DF8B /* LaunchScreen.storyboard */,
 				F9787D1F1E651A0800778A4E /* CategoryTableViewCell.swift */,
 				F9787D211E651A1900778A4E /* AppTableViewCell.swift */,
@@ -393,7 +387,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F982F5EC202FB8200065DE42 /* Main_iPad.storyboard in Resources */,
 				F9787D401E651F3800778A4E /* AGPushNoteView.xib in Resources */,
 				F92121031E61DBD00041DF8B /* LaunchScreen.storyboard in Resources */,
 				F92121001E61DBD00041DF8B /* Assets.xcassets in Resources */,
@@ -507,7 +500,6 @@
 				F9787D301E651AFA00778A4E /* DetailTableViewController.swift in Sources */,
 				F9787D361E651B3000778A4E /* ImageCacheHandler.swift in Sources */,
 				F9787D381E651B6300778A4E /* UIViewController+ViewControllerShowing.swift in Sources */,
-				D7DEDA16203028D300B8934A /* CategoriesTableViewIpadController.swift in Sources */,
 				F9787D2C1E651A9000778A4E /* AppsTableViewController.swift in Sources */,
 				F9787D221E651A1900778A4E /* AppTableViewCell.swift in Sources */,
 				F92120F91E61DBCF0041DF8B /* AppDelegate.swift in Sources */,
