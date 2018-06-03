@@ -1,19 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" colorMatched="YES" initialViewController="OwE-jA-MKa">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" colorMatched="YES" initialViewController="OwE-jA-MKa">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="HelveticaNeue.ttc">
-            <string>HelveticaNeue</string>
-            <string>HelveticaNeue-Bold</string>
-        </array>
-    </customFonts>
     <scenes>
         <!--Apps-->
         <scene sceneID="4Cl-No-u2D">
@@ -112,7 +106,7 @@
                                 <connections>
                                     <outlet property="categoryImage" destination="KQm-bu-gYM" id="M58-l4-bZA"/>
                                     <outlet property="categoryLabel" destination="xzF-Ra-USw" id="V5g-xh-rXs"/>
-                                    <segue destination="WUh-U3-bYE" kind="push" identifier="ShowApp" id="dcd-V2-PgZ"/>
+                                    <segue destination="WUh-U3-bYE" kind="push" identifier="categoriesToApps" id="dcd-V2-PgZ"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

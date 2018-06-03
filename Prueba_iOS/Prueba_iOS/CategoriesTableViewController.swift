@@ -11,39 +11,31 @@ import RealmSwift
 import AFNetworking
 
 class CategoriesTableViewController: UITableViewController {
+    
+    // MARK: Stored properties
 
     var dataSource: Results<Category>?
-    var loadObjects: (() -> ())!
+    var realm = try! Realm()
+    
+    // MARK: Lifecycle
     
     override func viewDidLoad() {
-        
+        loadData()
         super.viewDidLoad()
-        let realm = try! Realm()
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    // MARK: Private operations
+    
+    private func loadData() {
+        let manager = AFNetworkReachabilityManager.shared()
         
-        self.loadObjects = { () -> Void in
-            self.dataSource = realm.objects(Category.self)
-            self.tableView.reloadData()
-        }
-        
-        let createDatabase = { () -> Void in
-            
-            let networkHandler: NetworkHandler = NetworkHandler()
-            networkHandler.jSonWith("https://www.reddit.com/reddits.json", andReturn: { (dic, error) in
-                
-                if error == nil
-                {
-                    let storeHandler: StoreHandler = StoreHandler()
-                    storeHandler.createLocalDataBaseWith(dic!)
-                    self.loadObjects()
-                }
-            });
-        }
-        
-        let manager: AFNetworkReachabilityManager = AFNetworkReachabilityManager.shared()
-        manager.setReachabilityStatusChange { (status) in
-            
-            if status == AFNetworkReachabilityStatus.notReachable
-            {
+        manager.setReachabilityStatusChange { [weak self] (status) in
+            if status == .notReachable {
                 let message: AGPushNote = AGPushNote()
                 message.setDefaultUI()
                 message.message = "Funcionando en modo Offline"
@@ -53,43 +45,53 @@ class CategoriesTableViewController: UITableViewController {
                 AGPushNoteView.showNotification(message)
                 AGPushNoteView.setCloseAction({})
                 AGPushNoteView.setMessageAction({ (pushNote) in })
-                self.loadObjects()
-            }
-            else
-            {
+                self?.loadObjects()
+            } else {
                 AGPushNoteView.close(completion: {})
-                createDatabase()
+                self?.createDatabase()
             }
-        };
+        }
         
         manager.startMonitoring()
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat{
-       
-        return 67.0;
+    private func createDatabase() {
+        let networkHandler = NetworkHandler()
+        
+        networkHandler.jSonWith("https://www.reddit.com/reddits.json", andReturn: { [weak self] (dic, error) in
+            if let error = error {
+                print(error.localizedDescription)
+            } else {
+                let storeHandler: StoreHandler = StoreHandler()
+                storeHandler.createLocalDataBaseWith(dic!)
+                
+                DispatchQueue.main.async { [weak self] in
+                    self?.loadObjects()
+                }
+            }
+        });
+    }
+    
+    private func loadObjects() {
+        dataSource = realm.objects(Category.self)
+        tableView.reloadData()
+    }
+    
+    // MARK: UITableViewController overrides
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 67.0
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
-        
-        if let data = dataSource
-        {
+        if let data = dataSource {
             return data.count + 1
-        }
-        else
-        {
+        } else {
             return 0
         }
     }
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
-        
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: CategoryTableViewCell = tableView.dequeueReusableCell(withIdentifier: "CategoryCell", for: indexPath) as! CategoryTableViewCell
         return cell
     }
@@ -98,16 +100,16 @@ class CategoriesTableViewController: UITableViewController {
         
         let categoryCell: CategoryTableViewCell = cell as! CategoryTableViewCell
         
-        if (indexPath.row == 0)
-        {
+        if (indexPath.row == 0) {
             categoryCell.categoryLabel.text = "Mostrar todo"
             categoryCell.categoryImage.image = UIImage(named: "all_iphone_image")
-        }
-        else
-        {
+        } else {
             let category: Category = dataSource![indexPath.row - 1]
             categoryCell.categoryLabel.text = (category.name == "Undefined") ? "Sin Categoría" : category.name
-            categoryCell.categoryImage.image = UIImage(named: category.imageName!)
+            
+            if let imageName = category.imageName {
+                categoryCell.categoryImage.image = UIImage(named: imageName)
+            }
         }
     }
     
@@ -119,8 +121,7 @@ class CategoriesTableViewController: UITableViewController {
         
         let indexPath: IndexPath? = self.tableView.indexPathForSelectedRow;
         
-        if (segue.identifier == "ShowApp")
-        {
+        if segue.identifier == K.Segue.categoriesToApps {
             let controller: AppsTableViewController = segue.destination as! AppsTableViewController
             controller.category = (indexPath!.row == 0) ? nil : self.dataSource![indexPath!.row - 1];
         }
