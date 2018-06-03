@@ -350,6 +350,7 @@
 				TargetAttributes = {
 					F92120F41E61DBCF0041DF8B = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = AQUE4FE98B;
 						ProvisioningStyle = Automatic;
 					};
 					F92121081E61DBD20041DF8B = {
@@ -666,11 +667,12 @@
 			baseConfigurationReference = 1D6573827A1E249024A97C22 /* Pods-Prueba_iOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = AQUE4FE98B;
 				INFOPLIST_FILE = Prueba_iOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.humberto.cetina.Prueba-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx10.13;
+				SDKROOT = iphoneos11.4;
 				SWIFT_OBJC_BRIDGING_HEADER = "Prueba_iOS/PruebaiOS-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -682,11 +684,12 @@
 			baseConfigurationReference = 0A15C4144AE3EC1F03CDB77B /* Pods-Prueba_iOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = AQUE4FE98B;
 				INFOPLIST_FILE = Prueba_iOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.humberto.cetina.Prueba-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx10.13;
+				SDKROOT = iphoneos11.4;
 				SWIFT_OBJC_BRIDGING_HEADER = "Prueba_iOS/PruebaiOS-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
