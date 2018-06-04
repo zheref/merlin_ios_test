@@ -9,7 +9,7 @@
 import UIKit
 import RealmSwift
 
-class App: Object {
+class FeedItem: Object {
 
     dynamic var bannerImg: String?
     dynamic var _id: String?

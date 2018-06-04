@@ -21,7 +21,7 @@ class ImageCacheHandler: NSObject {
         return nil
     }
     
-    func imageForUrl(_ url: String?, andReturn block:@escaping (_ image: UIImage?) -> Void) {
+    func imageForUrl(_ url: String?, andReturn block: @escaping (_ image: UIImage?) -> Void) {
         
         let tmpFolderUrl: URL = URL.init(fileURLWithPath: NSTemporaryDirectory(), isDirectory: true)
         

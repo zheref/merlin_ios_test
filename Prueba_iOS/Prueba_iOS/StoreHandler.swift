@@ -63,7 +63,7 @@ class StoreHandler: NSObject {
         {
             let interestingData: Dictionary<String, Any> = child["data"] as! Dictionary
             
-            let newApp: App = App()
+            let newApp: FeedItem = FeedItem()
             newApp.bannerImg    = valueFor(interestingData["banner_img"])
             newApp._id          = valueFor(interestingData["id"])
             newApp.summitText   = valueFor(interestingData["submit_text"])

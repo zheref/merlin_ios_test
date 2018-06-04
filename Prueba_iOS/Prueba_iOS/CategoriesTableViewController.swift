@@ -118,12 +118,13 @@ class CategoriesTableViewController: UITableViewController {
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        let indexPath: IndexPath? = self.tableView.indexPathForSelectedRow;
-        
         if segue.identifier == K.Segue.categoriesToApps {
-            let controller: AppsTableViewController = segue.destination as! AppsTableViewController
-            controller.category = (indexPath!.row == 0) ? nil : self.dataSource![indexPath!.row - 1];
+            if let controller = segue.destination as? FeedTableViewController,
+                let indexPath = tableView.indexPathForSelectedRow,
+                let dataSource = dataSource {
+                
+                controller.category = indexPath.row == 0 ? nil : dataSource[indexPath.row - 1]
+            }
         }
     }
 }

@@ -11,12 +11,11 @@ import RealmSwift
 
 class AppsCollectionViewController: UICollectionViewController {
 
-    var dataSource: Results<App>?
+    var dataSource: Results<FeedItem>?
     var imageHandler: ImageCacheHandler = ImageCacheHandler()
     var category: Category?
     
     override func viewDidLoad() {
-        
         super.viewDidLoad()
         
         self.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem;
@@ -36,11 +35,11 @@ class AppsCollectionViewController: UICollectionViewController {
         if (self.category != nil)
         {
             let pred: NSPredicate = NSPredicate(format: "category.name = %@", self.category!.name!)
-            self.dataSource =  realm.objects(App.self).filter(pred)
+            self.dataSource =  realm.objects(FeedItem.self).filter(pred)
         }
         else
         {
-            self.dataSource =  realm.objects(App.self)
+            self.dataSource =  realm.objects(FeedItem.self)
         }
         
         self.collectionView?.reloadData()
@@ -62,7 +61,7 @@ class AppsCollectionViewController: UICollectionViewController {
         
         let navController: UINavigationController =  segue.destination as! UINavigationController
         let controller: DetailTableViewController = navController.viewControllers.first as! DetailTableViewController
-        controller.app = self.dataSource![indexPath!.row];
+        controller.item = self.dataSource![indexPath!.row];
     }
     
 
@@ -84,7 +83,7 @@ class AppsCollectionViewController: UICollectionViewController {
         
         let cell: UICollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "AppCell", for: indexPath)
         let appCell: AppCollectionViewCell = cell as! AppCollectionViewCell
-        let app: App = self.dataSource![indexPath.row]
+        let app: FeedItem = self.dataSource![indexPath.row]
         
         appCell.appTitle.text = app.title
         appCell.appDescription.text = app.summitText
