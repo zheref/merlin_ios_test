@@ -24,7 +24,7 @@ More accurate names for classes were introduced, such as from "App" to "FeedItem
 
 The code was completely refactored in order to get closer to a "good practices" approach by separating the different responsibilities and micro tasks into different new methods within the already existing classes or by introducing a new class responsible of this isolated task (as an example: FeedItemParser).
 
-Also a new class was introduced called "Constants", responsible of holding most of the literals so that it can be avoided to use this latest ones, making the codebase more centralized and secure. Also in this Constants file, other global symbols were declared for facility purposes such us the NetworkCallback which is an alias of a regularly used dictionary combination ([String: Any?]).
+Also a new class was introduced called "Constants", responsible of holding most of the literals so that it can be avoided to use this latest ones, making the codebase more centralized and secure. Also in this Constants file, other global symbols were declared for facility purposes such as the RegularDictionary which is an alias of a regularly used dictionary combination ([String: Any?]).
 
 A lot of semicolons were removed, bad code formatting, lack of use of conditional unwrapping through ifs and guard, wrong vocabulary that was not matching regular iOS's verbosity, and so on along with a bunch of changes to follow better practices.
 
