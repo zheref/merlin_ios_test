@@ -3,6 +3,8 @@
 
 ![merlin](https://user-images.githubusercontent.com/36903172/40690518-1d96ca26-636d-11e8-96da-1099959227a2.jpeg)
 
+**STATUS:** _READY TO TEST_
+
 # Our problem
 
 This test consists of an already built application that downloads information from Reddit that contains images and text but that is malfunctioning (The Xcode Project comes next to this document and is called Prueba_iOS). 
@@ -18,7 +20,7 @@ Also some regular and many potential crashes were addressed, including regular u
 The app was fixed in order to target iOS only and it was made Universal by also taking advantage of Autolayout in order to support multiple screen sizes by using only one storyboard capable to resize and reaccomodate accordingly.
 
 ## Practices
-More accurate names for classes were introduced, such us from "App" to "FeedItem" (considering this is the actual information the app is fetching from Reddit) and other such us methods comforming more accurately to the Swift Design Guidelines.
+More accurate names for classes were introduced, such as from "App" to "FeedItem" (considering this is the actual information the app is fetching from Reddit) and other such as methods names for comforming more accurately to the Swift Design Guidelines.
 
 The code was completely refactored in order to get closer to a "good practices" approach by separating the different responsibilities and micro tasks into different new methods within the already existing classes or by introducing a new class responsible of this isolated task (as an example: FeedItemParser).
 
@@ -32,7 +34,7 @@ Finally the code was migrated completely into Swift 4 dealing with all the warni
 
 Several different archictectures were used such as the implementation of different stereotypes such as Singletons, Factories, Fetchers, Parsers and DataStores, with the sole intention of separating correctly responsibilities; as well as a very Protocol Oriented Programming approach.
 
-The architectural design pattern was kept as MVC, since given the low complexity and extent of this app, a more advanced pattern such as MVP, MVVM or VIPER would be totally misused and would add unnecessary complexity to the codebase making harder its sustainment flow.
+The architectural design pattern was kept as MVC, since given the low complexity and extent of this app, a more advanced pattern such as MVP, MVVM or VIPER would be totally underused and would add unnecessary complexity to the codebase making harder its sustainment flow.
 
 ## Error Handling
 
