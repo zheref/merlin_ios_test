@@ -65,7 +65,7 @@ class DetailTableViewController: UITableViewController {
         }
         
         if let imageUrl = imageUrl {
-            ImageCacheHandler().imageFor(urlString: imageUrl) { [weak self] (image) in
+            ImageCacher.shared.image(forUrlString: imageUrl) { [weak self] (image) in
                 DispatchQueue.main.async { [weak self] in
                     if let image = image {
                         self?.imageView.image = image

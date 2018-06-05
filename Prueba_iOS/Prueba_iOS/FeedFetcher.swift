@@ -24,7 +24,7 @@ class FeedFetcher : FeedFetcherProtocol {
     
     // MARK: Class members
     
-    static let shared: FeedFetcher = {
+    static let shared: FeedFetcherProtocol = {
         return FeedFetcher()
     }()
     
@@ -50,23 +50,15 @@ class FeedFetcher : FeedFetcherProtocol {
                 do {
                     let jsonDic = try JSONSerialization.jsonObject(with: data,
                                                                    options: JSONSerialization.ReadingOptions.mutableContainers)
-                    DispatchQueue.main.async {
-                        completion(jsonDic as? RegularDictionary, nil)
-                    }
+                    completion(jsonDic as? RegularDictionary, nil)
                 } catch {
-                    DispatchQueue.main.async {
-                        completion(nil, error)
-                    }
+                    completion(nil, error)
                 }
             } else if let error = error {
-                DispatchQueue.main.async {
-                    completion(nil, error)
-                }
+                completion(nil, error)
             } else {
                 let error = FeedFetcherError.insufficientDataToProceed
-                DispatchQueue.main.async {
-                    completion(nil, error)
-                }
+                completion(nil, error)
             }
         }
         

@@ -43,11 +43,13 @@ class FeedItemTableViewCell: UITableViewCell {
         }
         
         if let imageUrl = imageUrl {
-            ImageCacheHandler().imageFor(urlString: imageUrl, andReturn: { [weak self] (image) in
-                if let image = image {
-                    self?.appImage.image = image
-                } else {
-                    self?.appImage.image = UIImage(named: "no_image_black")
+            ImageCacher.shared.image(forUrlString: imageUrl, completion: { [weak self] (image) in
+                DispatchQueue.main.async {
+                    if let image = image {
+                        self?.appImage.image = image
+                    } else {
+                        self?.appImage.image = UIImage(named: "no_image_black")
+                    }
                 }
             })
         }

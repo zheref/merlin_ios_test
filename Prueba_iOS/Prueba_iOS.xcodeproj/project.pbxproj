@@ -28,7 +28,7 @@
 		F9787D301E651AFA00778A4E /* DetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9787D2F1E651AFA00778A4E /* DetailTableViewController.swift */; };
 		F9787D321E651B1300778A4E /* FeedFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9787D311E651B1300778A4E /* FeedFetcher.swift */; };
 		F9787D341E651B2000778A4E /* FeedDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9787D331E651B2000778A4E /* FeedDataStore.swift */; };
-		F9787D361E651B3000778A4E /* ImageCacheHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9787D351E651B3000778A4E /* ImageCacheHandler.swift */; };
+		F9787D361E651B3000778A4E /* ImageCacher.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9787D351E651B3000778A4E /* ImageCacher.swift */; };
 		F9787D381E651B6300778A4E /* UIViewController+ViewControllerShowing.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9787D371E651B6300778A4E /* UIViewController+ViewControllerShowing.swift */; };
 		F9787D3F1E651F3800778A4E /* AGPushNoteView.m in Sources */ = {isa = PBXBuildFile; fileRef = F9787D3D1E651F3800778A4E /* AGPushNoteView.m */; };
 		F9787D401E651F3800778A4E /* AGPushNoteView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9787D3E1E651F3800778A4E /* AGPushNoteView.xib */; };
@@ -85,7 +85,7 @@
 		F9787D2F1E651AFA00778A4E /* DetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailTableViewController.swift; sourceTree = "<group>"; };
 		F9787D311E651B1300778A4E /* FeedFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedFetcher.swift; sourceTree = "<group>"; };
 		F9787D331E651B2000778A4E /* FeedDataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedDataStore.swift; sourceTree = "<group>"; };
-		F9787D351E651B3000778A4E /* ImageCacheHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCacheHandler.swift; sourceTree = "<group>"; };
+		F9787D351E651B3000778A4E /* ImageCacher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCacher.swift; sourceTree = "<group>"; };
 		F9787D371E651B6300778A4E /* UIViewController+ViewControllerShowing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+ViewControllerShowing.swift"; sourceTree = "<group>"; };
 		F9787D3C1E651F3800778A4E /* AGPushNoteView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGPushNoteView.h; sourceTree = "<group>"; };
 		F9787D3D1E651F3800778A4E /* AGPushNoteView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGPushNoteView.m; sourceTree = "<group>"; };
@@ -252,7 +252,7 @@
 		F9787D1B1E65198100778A4E /* Handlers */ = {
 			isa = PBXGroup;
 			children = (
-				F9787D351E651B3000778A4E /* ImageCacheHandler.swift */,
+				F9787D351E651B3000778A4E /* ImageCacher.swift */,
 				F9787D311E651B1300778A4E /* FeedFetcher.swift */,
 				F9787D331E651B2000778A4E /* FeedDataStore.swift */,
 			);
@@ -524,7 +524,7 @@
 				2B5BE17820C5540600A5BBB7 /* UIViewController+ErrorAlert.swift in Sources */,
 				F9787D441E661DD500778A4E /* UIViewController+BackButtonHandler.m in Sources */,
 				F9787D301E651AFA00778A4E /* DetailTableViewController.swift in Sources */,
-				F9787D361E651B3000778A4E /* ImageCacheHandler.swift in Sources */,
+				F9787D361E651B3000778A4E /* ImageCacher.swift in Sources */,
 				F9787D381E651B6300778A4E /* UIViewController+ViewControllerShowing.swift in Sources */,
 				F9787D2C1E651A9000778A4E /* FeedTableViewController.swift in Sources */,
 				F9787D221E651A1900778A4E /* FeedItemTableViewCell.swift in Sources */,

@@ -19,7 +19,7 @@ class FeedDataStore : FeedDataStoreProtocol {
     
     // MARK: Class members
     
-    static var shared: FeedDataStore = {
+    static var shared: FeedDataStoreProtocol = {
         return FeedDataStore()
     }()
     
