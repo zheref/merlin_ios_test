@@ -56,7 +56,11 @@ class DetailTableViewController: UITableViewController {
             title = heading
         }
         
-        descriptionLabel.text = item?.summitText
+        if let summitText = item?.summitText {
+            descriptionLabel.attributedText = MarkdownHelper.shared.parseFullScreen(fromString: summitText)
+        } else {
+            descriptionLabel.text = String()
+        }
         
         var imageUrl: String?
         

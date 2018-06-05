@@ -19,22 +19,26 @@ PODS:
   - Realm/Headers (3.6.0)
   - RealmSwift (3.6.0):
     - Realm (= 3.6.0)
+  - SwiftyMarkdown (0.5.1)
 
 DEPENDENCIES:
   - AFNetworking
   - RealmSwift
+  - SwiftyMarkdown
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  https://github.com/CocoaPods/Specs.git:
     - AFNetworking
     - Realm
     - RealmSwift
+    - SwiftyMarkdown
 
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
   Realm: 08b464b462d4f31bbd4ba5f5a1c8722ef0a700b7
   RealmSwift: 973e1499c44ab571f894c2c908e2db450be280c3
+  SwiftyMarkdown: 743af3e87931391bc4836b825fec3d98785b2e3a
 
-PODFILE CHECKSUM: f5386cd89e63736356c61a5469f411f904dcccb2
+PODFILE CHECKSUM: 816769c17d15d30ebaf09c2d07fe35db463bbd02
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.5.0

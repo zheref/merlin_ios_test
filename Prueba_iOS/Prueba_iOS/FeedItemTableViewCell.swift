@@ -31,7 +31,13 @@ class FeedItemTableViewCell: UITableViewCell {
     
     func set(model: FeedItem) {
         titleLabel.text = model.title
-        descriptionLabel.text = model.summitText
+        
+        if let summitText = model.summitText {
+            descriptionLabel.attributedText = MarkdownHelper.shared.parseAsSummary(fromString: summitText)
+        } else {
+            descriptionLabel.text = String()
+        }
+        
         accessoryType = .disclosureIndicator
         
         var imageUrl: String?

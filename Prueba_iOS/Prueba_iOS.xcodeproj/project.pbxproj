@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2B5BE17820C5540600A5BBB7 /* UIViewController+ErrorAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5BE17720C5540600A5BBB7 /* UIViewController+ErrorAlert.swift */; };
 		2B5BE17A20C62B5D00A5BBB7 /* FeedItemParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5BE17920C62B5D00A5BBB7 /* FeedItemParser.swift */; };
+		2B5BE17D20C6491900A5BBB7 /* MarkdownHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5BE17C20C6491900A5BBB7 /* MarkdownHelper.swift */; };
 		2B79913920C49F9700A51A6F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B79913820C49F9700A51A6F /* Constants.swift */; };
 		CC766651AAEA9F81E52B75C1 /* Pods_Prueba_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 530E9E4678824283C33423FC /* Pods_Prueba_iOS.framework */; };
 		DD3DD7B9A7E79C2705C6F0F6 /* Pods_Prueba_iOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAC4204D63860C38933C7494 /* Pods_Prueba_iOSTests.framework */; };
@@ -58,6 +59,7 @@
 		1D6573827A1E249024A97C22 /* Pods-Prueba_iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Prueba_iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Prueba_iOS/Pods-Prueba_iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		2B5BE17720C5540600A5BBB7 /* UIViewController+ErrorAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+ErrorAlert.swift"; sourceTree = "<group>"; };
 		2B5BE17920C62B5D00A5BBB7 /* FeedItemParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedItemParser.swift; sourceTree = "<group>"; };
+		2B5BE17C20C6491900A5BBB7 /* MarkdownHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkdownHelper.swift; sourceTree = "<group>"; };
 		2B79913820C49F9700A51A6F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		42A1522905480100EB16E276 /* Pods-Prueba_iOSUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Prueba_iOSUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Prueba_iOSUITests/Pods-Prueba_iOSUITests.release.xcconfig"; sourceTree = "<group>"; };
 		530E9E4678824283C33423FC /* Pods_Prueba_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Prueba_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -245,6 +247,7 @@
 				F9787D431E661DD500778A4E /* UIViewController+BackButtonHandler.m */,
 				F9787D371E651B6300778A4E /* UIViewController+ViewControllerShowing.swift */,
 				2B5BE17720C5540600A5BBB7 /* UIViewController+ErrorAlert.swift */,
+				2B5BE17C20C6491900A5BBB7 /* MarkdownHelper.swift */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -481,12 +484,14 @@
 				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyMarkdown/SwiftyMarkdown.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyMarkdown.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -530,6 +535,7 @@
 				F9787D221E651A1900778A4E /* FeedItemTableViewCell.swift in Sources */,
 				F92120F91E61DBCF0041DF8B /* AppDelegate.swift in Sources */,
 				F9787D261E651A4F00778A4E /* FeedItem.swift in Sources */,
+				2B5BE17D20C6491900A5BBB7 /* MarkdownHelper.swift in Sources */,
 				F9787D2A1E651A7F00778A4E /* CategoriesTableViewController.swift in Sources */,
 				F9787D201E651A0800778A4E /* CategoryTableViewCell.swift in Sources */,
 				F9787D281E651A5900778A4E /* Category.swift in Sources */,
