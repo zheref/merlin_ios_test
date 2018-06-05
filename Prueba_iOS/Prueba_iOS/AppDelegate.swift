@@ -16,12 +16,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        
-        if let splitViewController = window?.rootViewController as? UISplitViewController
-        {
-            splitViewController.preferredDisplayMode = UISplitViewControllerDisplayMode.primaryOverlay //TODO: This line is intenter to be erased by the developer
-        }
-        
         EasyAnimation.enable()
 
         return true
@@ -51,16 +45,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, supportedInterfaceOrientationsFor window: UIWindow?) -> UIInterfaceOrientationMask {
         
-        //TODO: Erase this code, the developer must put it again, all orientations only is supported on iPad and iphone plus
-        if window?.traitCollection.userInterfaceIdiom == UIUserInterfaceIdiom.pad ||
-           (window?.traitCollection.userInterfaceIdiom == UIUserInterfaceIdiom.phone && window?.traitCollection.displayScale == 3.0)
-        {
-            return UIInterfaceOrientationMask.all
-        }
-        else
-        {
-            return UIInterfaceOrientationMask.portrait
-        }
     }
 }
 
