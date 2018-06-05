@@ -375,15 +375,18 @@
 					F92120F41E61DBCF0041DF8B = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = AQUE4FE98B;
+						LastSwiftMigration = 0940;
 						ProvisioningStyle = Automatic;
 					};
 					F92121081E61DBD20041DF8B = {
 						CreatedOnToolsVersion = 8.2.1;
+						LastSwiftMigration = 0940;
 						ProvisioningStyle = Automatic;
 						TestTargetID = F92120F41E61DBCF0041DF8B;
 					};
 					F92121131E61DBD20041DF8B = {
 						CreatedOnToolsVersion = 8.2.1;
+						LastSwiftMigration = 0940;
 						ProvisioningStyle = Automatic;
 						TestTargetID = F92120F41E61DBCF0041DF8B;
 					};
@@ -702,7 +705,8 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos11.4;
 				SWIFT_OBJC_BRIDGING_HEADER = "Prueba_iOS/PruebaiOS-Bridging-Header.h";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -719,7 +723,8 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos11.4;
 				SWIFT_OBJC_BRIDGING_HEADER = "Prueba_iOS/PruebaiOS-Bridging-Header.h";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -734,7 +739,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.humberto.cetina.Prueba-iOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Prueba_iOS.app/Prueba_iOS";
 			};
 			name = Debug;
@@ -749,7 +755,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.humberto.cetina.Prueba-iOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Prueba_iOS.app/Prueba_iOS";
 			};
 			name = Release;
@@ -763,7 +770,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.humberto.cetina.Prueba-iOSUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 				TEST_TARGET_NAME = Prueba_iOS;
 			};
 			name = Debug;
@@ -777,7 +785,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.humberto.cetina.Prueba-iOSUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 				TEST_TARGET_NAME = Prueba_iOS;
 			};
 			name = Release;

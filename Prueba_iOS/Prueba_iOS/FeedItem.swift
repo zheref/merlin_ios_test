@@ -11,12 +11,12 @@ import RealmSwift
 
 class FeedItem: Object {
 
-    dynamic var bannerImg: String?
-    dynamic var _id: String?
-    dynamic var summitText: String?
-    dynamic var displayText: String?
-    dynamic var title: String?
-    dynamic var iconImg: String?
-    dynamic var category: Category?
+    @objc dynamic var bannerImg: String?
+    @objc dynamic var _id: String?
+    @objc dynamic var summitText: String?
+    @objc dynamic var displayText: String?
+    @objc dynamic var title: String?
+    @objc dynamic var iconImg: String?
+    @objc dynamic var category: Category?
     
 }

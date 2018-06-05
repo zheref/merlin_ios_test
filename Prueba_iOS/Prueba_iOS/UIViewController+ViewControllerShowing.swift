@@ -13,7 +13,7 @@ extension UIViewController {
         Returns whether calling `showViewController(_:sender:)` would cause a
         navigation "push" to occur.
     */
-    func willShowingViewControllerPushWithSender(_ sender: AnyObject?) -> Bool {
+    @objc func willShowingViewControllerPushWithSender(_ sender: AnyObject?) -> Bool {
         // Find and ask the right view controller about showing.
         if let target = targetViewController(forAction: #selector(UIViewController.willShowingViewControllerPushWithSender(_:)), sender: sender) {
             return target.willShowingViewControllerPushWithSender(sender)
@@ -27,7 +27,7 @@ extension UIViewController {
         Returns whether calling `showDetailViewController(_:sender:)` would cause a
         navigation "push" to occur.
     */
-    func willShowingDetailViewControllerPushWithSender(_ sender: AnyObject?) -> Bool {
+    @objc func willShowingDetailViewControllerPushWithSender(_ sender: AnyObject?) -> Bool {
         // Find and ask the right view controller about showing.
         if let target = targetViewController(forAction: #selector(UIViewController.willShowingDetailViewControllerPushWithSender(_:)), sender: sender) {
             return target.willShowingDetailViewControllerPushWithSender(sender)
