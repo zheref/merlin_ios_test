@@ -13,9 +13,9 @@ class FeedItemTableViewCell: UITableViewCell {
     
     // MARK: Outlets
     
-    @IBOutlet var picImageView: UIImageView!
-    @IBOutlet var titleLabel: UILabel!
-    @IBOutlet var descriptionLabel: UILabel!
+    @IBOutlet weak var picImageView: UIImageView!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
     
     // MARK: Lifecycle
     

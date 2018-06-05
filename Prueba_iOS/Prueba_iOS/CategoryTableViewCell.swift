@@ -12,8 +12,8 @@ class CategoryTableViewCell: UITableViewCell {
     
     // MARK: Outlets
 
-    @IBOutlet var categoryLabel: UILabel!
-    @IBOutlet var categoryImage: UIImageView!
+    @IBOutlet weak var categoryLabel: UILabel!
+    @IBOutlet weak var categoryImage: UIImageView!
     
     // MARK: Lifecycle
     

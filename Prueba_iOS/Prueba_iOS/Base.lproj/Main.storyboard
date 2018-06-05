@@ -204,6 +204,7 @@
                     <navigationItem key="navigationItem" title="Detalle" id="qQj-I0-W6c"/>
                     <connections>
                         <outlet property="descriptionLabel" destination="A7k-Bn-nLo" id="fNn-Xx-Wjr"/>
+                        <outlet property="imageContainer" destination="e8h-Sr-yi9" id="oAx-X0-ugb"/>
                         <outlet property="imageView" destination="0bE-V9-bOV" id="ZLp-fa-BlU"/>
                     </connections>
                 </tableViewController>

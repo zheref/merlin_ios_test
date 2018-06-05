@@ -22,8 +22,9 @@ class DetailTableViewController: UITableViewController {
     
     // MARK: Outlets
     
-    @IBOutlet var imageView: UIImageView!
-    @IBOutlet var descriptionLabel: UILabel!
+    @IBOutlet weak var imageContainer: UIView!
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var descriptionLabel: UILabel!
     
     // MARK: Lifecycle
     
@@ -80,6 +81,12 @@ class DetailTableViewController: UITableViewController {
                     }
                     
                     self?.tableView.reloadData()
+                    
+                    self?.imageView.layer.frame.size.height = 0.0
+                    
+                    UIView.animate(withDuration: 1.0, animations: {
+                        self?.imageView.layer.frame.size.height = 275.0
+                    })
                 }
             }
         }
