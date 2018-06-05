@@ -9,19 +9,27 @@
 import UIKit
 
 class CategoryTableViewCell: UITableViewCell {
+    
+    // MARK: Outlets
 
     @IBOutlet var categoryLabel: UILabel!
     @IBOutlet var categoryImage: UIImageView!
+    
+    // MARK: Lifecycle
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    
+    // MARK: Operations
+    
+    func set(model: Category) {
+        categoryLabel.text = model.name == "Undefined" ? "Sin Categoría" : model.name
+        
+        if let imageName = model.imageName {
+            categoryImage.image = UIImage(named: imageName)
+        }
     }
 
 }

@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="AppCell" rowHeight="106" id="enQ-Cx-U3R" customClass="FeedItemTableViewCell" customModule="Prueba_iOS" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="FeedItemCell" rowHeight="106" id="enQ-Cx-U3R" customClass="FeedItemTableViewCell" customModule="Prueba_iOS" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="106"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="enQ-Cx-U3R" id="o2u-ob-APj">
@@ -216,9 +216,9 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="appDescription" destination="A7k-Bn-nLo" id="MGl-q1-ZkT"/>
-                        <outlet property="appImage" destination="0bE-V9-bOV" id="KfT-Uj-Dl5"/>
-                        <outlet property="appTitle" destination="glH-t3-bVz" id="p18-xP-wHb"/>
+                        <outlet property="descriptionLabel" destination="A7k-Bn-nLo" id="fNn-Xx-Wjr"/>
+                        <outlet property="imageView" destination="0bE-V9-bOV" id="ZLp-fa-BlU"/>
+                        <outlet property="titleLabel" destination="glH-t3-bVz" id="6da-bG-BM8"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TED-LJ-LPm" userLabel="First Responder" sceneMemberID="firstResponder"/>

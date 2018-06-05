@@ -34,23 +34,23 @@ class FeedItemTableViewCell: UITableViewCell {
         appDescription.text = model.summitText
         accessoryType = .disclosureIndicator
         
-        var imageUlr: String?
+        var imageUrl: String?
         
         if let iconImg = model.iconImg {
-            imageUlr = iconImg
-        }
-            
-        else if let bannerImg = model.bannerImg {
-            imageUlr = bannerImg
+            imageUrl = iconImg
+        } else if let bannerImg = model.bannerImg {
+            imageUrl = bannerImg
         }
         
-        ImageCacheHandler().imageForUrl(imageUlr, andReturn: { [weak self] (image) in
-            if let image = image {
-                self?.appImage.image = image
-            } else {
-                self?.appImage.image = UIImage(named: "no_image_black")
-            }
-        })
+        if let imageUrl = imageUrl {
+            ImageCacheHandler().imageFor(urlString: imageUrl, andReturn: { [weak self] (image) in
+                if let image = image {
+                    self?.appImage.image = image
+                } else {
+                    self?.appImage.image = UIImage(named: "no_image_black")
+                }
+            })
+        }
     }
 
 }

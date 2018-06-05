@@ -9,12 +9,18 @@
 import UIKit
 import RealmSwift
 
-class FeedRealmDataStore {
+protocol FeedDataStoreProtocol : class {
+    
+    func createDatabase(withJson json: RegularDictionary) -> Void
+    
+}
+
+class FeedDataStore : FeedDataStoreProtocol {
     
     // MARK: Class members
     
-    static var shared: FeedRealmDataStore = {
-        return FeedRealmDataStore()
+    static var shared: FeedDataStore = {
+        return FeedDataStore()
     }()
     
     // MARK: Initializers

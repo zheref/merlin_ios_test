@@ -12,6 +12,16 @@ import AFNetworking
 
 class CategoriesTableViewController: UITableViewController {
     
+    // MARK: Subtypes
+    
+    struct Constants {
+        static let cellHeight: CGFloat = 67.0
+    }
+    
+    enum ControllerError : Error {
+        case unableToHandleResponse
+    }
+    
     // MARK: Stored properties
 
     var dataSource: Results<Category>?
@@ -36,7 +46,7 @@ class CategoriesTableViewController: UITableViewController {
         
         manager.setReachabilityStatusChange { [weak self] (status) in
             if status == .notReachable {
-                let message: AGPushNote = AGPushNote()
+                let message = AGPushNote()
                 message.setDefaultUI()
                 message.message = "Funcionando en modo Offline"
                 message.iconImage = UIImage(named: "no_wifi")
@@ -56,20 +66,27 @@ class CategoriesTableViewController: UITableViewController {
     }
     
     private func createDatabase() {
-        let networkHandler = NetworkHandler()
-        
-        networkHandler.jSonWith("https://www.reddit.com/reddits.json", andReturn: { [weak self] (dic, error) in
+        FeedFetcher.shared.start(withUrl: K.UrlString.redditFeedUrl, completion: { [weak self] (dic, error) in
             if let error = error {
                 print(error.localizedDescription)
-            } else {
-                let storeHandler: StoreHandler = StoreHandler()
-                storeHandler.createLocalDataBaseWith(dic!)
                 
+                DispatchQueue.main.async { [weak self] in
+                    self?.presentAlert(forError: error, withCompletion: nil)
+                }
+            } else if let dict = dic {
+                FeedDataStore.shared.createDatabase(withJson: dict)
+                    
                 DispatchQueue.main.async { [weak self] in
                     self?.loadObjects()
                 }
+            } else {
+                let error = ControllerError.unableToHandleResponse
+                
+                DispatchQueue.main.async { [weak self] in
+                    self?.presentAlert(forError: error, withCompletion: nil)
+                }
             }
-        });
+        })
     }
     
     private func loadObjects() {
@@ -80,7 +97,7 @@ class CategoriesTableViewController: UITableViewController {
     // MARK: UITableViewController overrides
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 67.0
+        return Constants.cellHeight
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
@@ -92,27 +109,23 @@ class CategoriesTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: CategoryTableViewCell = tableView.dequeueReusableCell(withIdentifier: "CategoryCell", for: indexPath) as! CategoryTableViewCell
-        return cell
-    }
-    
-    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath){
+        let cell = tableView.dequeueReusableCell(withIdentifier: K.CellIdentifier.CategoryCell,
+                                                 for: indexPath)
         
-        let categoryCell: CategoryTableViewCell = cell as! CategoryTableViewCell
-        
-        if (indexPath.row == 0) {
-            categoryCell.categoryLabel.text = "Mostrar todo"
-            categoryCell.categoryImage.image = UIImage(named: "all_iphone_image")
-        } else {
-            let category: Category = dataSource![indexPath.row - 1]
-            categoryCell.categoryLabel.text = (category.name == "Undefined") ? "Sin Categoría" : category.name
-            
-            if let imageName = category.imageName {
-                categoryCell.categoryImage.image = UIImage(named: imageName)
+        if let cell = cell as? CategoryTableViewCell {
+            if indexPath.row == 0 {
+                cell.categoryLabel.text = "Mostrar todo"
+                cell.categoryImage.image = UIImage(named: "all_iphone_image")
+            } else {
+                if let dataSource = dataSource {
+                    let category = dataSource[indexPath.row - 1]
+                    cell.set(model: category)
+                }
             }
         }
+        
+        return cell
     }
-    
     
     // MARK: - Navigation
 

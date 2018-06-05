@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B5BE17820C5540600A5BBB7 /* UIViewController+ErrorAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5BE17720C5540600A5BBB7 /* UIViewController+ErrorAlert.swift */; };
+		2B5BE17A20C62B5D00A5BBB7 /* FeedItemParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5BE17920C62B5D00A5BBB7 /* FeedItemParser.swift */; };
 		2B79913920C49F9700A51A6F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B79913820C49F9700A51A6F /* Constants.swift */; };
 		CC766651AAEA9F81E52B75C1 /* Pods_Prueba_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 530E9E4678824283C33423FC /* Pods_Prueba_iOS.framework */; };
 		DD3DD7B9A7E79C2705C6F0F6 /* Pods_Prueba_iOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAC4204D63860C38933C7494 /* Pods_Prueba_iOSTests.framework */; };
@@ -24,8 +26,8 @@
 		F9787D2A1E651A7F00778A4E /* CategoriesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9787D291E651A7F00778A4E /* CategoriesTableViewController.swift */; };
 		F9787D2C1E651A9000778A4E /* FeedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9787D2B1E651A9000778A4E /* FeedTableViewController.swift */; };
 		F9787D301E651AFA00778A4E /* DetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9787D2F1E651AFA00778A4E /* DetailTableViewController.swift */; };
-		F9787D321E651B1300778A4E /* NetworkHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9787D311E651B1300778A4E /* NetworkHandler.swift */; };
-		F9787D341E651B2000778A4E /* StoreHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9787D331E651B2000778A4E /* StoreHandler.swift */; };
+		F9787D321E651B1300778A4E /* FeedFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9787D311E651B1300778A4E /* FeedFetcher.swift */; };
+		F9787D341E651B2000778A4E /* FeedDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9787D331E651B2000778A4E /* FeedDataStore.swift */; };
 		F9787D361E651B3000778A4E /* ImageCacheHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9787D351E651B3000778A4E /* ImageCacheHandler.swift */; };
 		F9787D381E651B6300778A4E /* UIViewController+ViewControllerShowing.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9787D371E651B6300778A4E /* UIViewController+ViewControllerShowing.swift */; };
 		F9787D3F1E651F3800778A4E /* AGPushNoteView.m in Sources */ = {isa = PBXBuildFile; fileRef = F9787D3D1E651F3800778A4E /* AGPushNoteView.m */; };
@@ -54,6 +56,8 @@
 		0A15C4144AE3EC1F03CDB77B /* Pods-Prueba_iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Prueba_iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-Prueba_iOS/Pods-Prueba_iOS.release.xcconfig"; sourceTree = "<group>"; };
 		151439BF569DFD9D3933C694 /* Pods-Prueba_iOSUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Prueba_iOSUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Prueba_iOSUITests/Pods-Prueba_iOSUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		1D6573827A1E249024A97C22 /* Pods-Prueba_iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Prueba_iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Prueba_iOS/Pods-Prueba_iOS.debug.xcconfig"; sourceTree = "<group>"; };
+		2B5BE17720C5540600A5BBB7 /* UIViewController+ErrorAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+ErrorAlert.swift"; sourceTree = "<group>"; };
+		2B5BE17920C62B5D00A5BBB7 /* FeedItemParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedItemParser.swift; sourceTree = "<group>"; };
 		2B79913820C49F9700A51A6F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		42A1522905480100EB16E276 /* Pods-Prueba_iOSUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Prueba_iOSUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Prueba_iOSUITests/Pods-Prueba_iOSUITests.release.xcconfig"; sourceTree = "<group>"; };
 		530E9E4678824283C33423FC /* Pods_Prueba_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Prueba_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -79,8 +83,8 @@
 		F9787D291E651A7F00778A4E /* CategoriesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoriesTableViewController.swift; sourceTree = "<group>"; };
 		F9787D2B1E651A9000778A4E /* FeedTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedTableViewController.swift; sourceTree = "<group>"; };
 		F9787D2F1E651AFA00778A4E /* DetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailTableViewController.swift; sourceTree = "<group>"; };
-		F9787D311E651B1300778A4E /* NetworkHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkHandler.swift; sourceTree = "<group>"; };
-		F9787D331E651B2000778A4E /* StoreHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreHandler.swift; sourceTree = "<group>"; };
+		F9787D311E651B1300778A4E /* FeedFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedFetcher.swift; sourceTree = "<group>"; };
+		F9787D331E651B2000778A4E /* FeedDataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedDataStore.swift; sourceTree = "<group>"; };
 		F9787D351E651B3000778A4E /* ImageCacheHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCacheHandler.swift; sourceTree = "<group>"; };
 		F9787D371E651B6300778A4E /* UIViewController+ViewControllerShowing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+ViewControllerShowing.swift"; sourceTree = "<group>"; };
 		F9787D3C1E651F3800778A4E /* AGPushNoteView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGPushNoteView.h; sourceTree = "<group>"; };
@@ -120,6 +124,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2B0D374B20C4E60A0076AD6C /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				2B5BE17B20C62B6300A5BBB7 /* Parsers */,
+				F9787D1D1E65199500778A4E /* Model */,
+				F9787D1B1E65198100778A4E /* Handlers */,
+			);
+			name = Core;
+			sourceTree = "<group>";
+		};
+		2B5BE17B20C62B6300A5BBB7 /* Parsers */ = {
+			isa = PBXGroup;
+			children = (
+				2B5BE17920C62B5D00A5BBB7 /* FeedItemParser.swift */,
+			);
+			name = Parsers;
+			sourceTree = "<group>";
+		};
+		2B65B51820C4E86D0057E0A8 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				F9787D1C1E65198D00778A4E /* Controllers */,
+				F9787D1E1E65199E00778A4E /* Views */,
+				F9787D1A1E65197700778A4E /* Helpers */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
 		30C62A27F404BEECCB3B26F9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -169,13 +201,10 @@
 			isa = PBXGroup;
 			children = (
 				F92120F81E61DBCF0041DF8B /* AppDelegate.swift */,
-				2B79913820C49F9700A51A6F /* Constants.swift */,
-				F9787D1E1E65199E00778A4E /* Views */,
-				F9787D1D1E65199500778A4E /* Model */,
-				F9787D1C1E65198D00778A4E /* Controllers */,
-				F9787D1B1E65198100778A4E /* Handlers */,
-				F9787D1A1E65197700778A4E /* Helpers */,
+				2B65B51820C4E86D0057E0A8 /* UI */,
+				2B0D374B20C4E60A0076AD6C /* Core */,
 				F9787D191E65196F00778A4E /* 3rd party */,
+				2B79913820C49F9700A51A6F /* Constants.swift */,
 				F92120FF1E61DBD00041DF8B /* Assets.xcassets */,
 				F92121041E61DBD00041DF8B /* Info.plist */,
 				F9787D411E65203900778A4E /* PruebaiOS-Bridging-Header.h */,
@@ -215,6 +244,7 @@
 				F9787D421E661DD500778A4E /* UIViewController+BackButtonHandler.h */,
 				F9787D431E661DD500778A4E /* UIViewController+BackButtonHandler.m */,
 				F9787D371E651B6300778A4E /* UIViewController+ViewControllerShowing.swift */,
+				2B5BE17720C5540600A5BBB7 /* UIViewController+ErrorAlert.swift */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -223,8 +253,8 @@
 			isa = PBXGroup;
 			children = (
 				F9787D351E651B3000778A4E /* ImageCacheHandler.swift */,
-				F9787D311E651B1300778A4E /* NetworkHandler.swift */,
-				F9787D331E651B2000778A4E /* StoreHandler.swift */,
+				F9787D311E651B1300778A4E /* FeedFetcher.swift */,
+				F9787D331E651B2000778A4E /* FeedDataStore.swift */,
 			);
 			name = Handlers;
 			sourceTree = "<group>";
@@ -488,8 +518,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B5BE17A20C62B5D00A5BBB7 /* FeedItemParser.swift in Sources */,
 				F9787D3F1E651F3800778A4E /* AGPushNoteView.m in Sources */,
-				F9787D341E651B2000778A4E /* StoreHandler.swift in Sources */,
+				F9787D341E651B2000778A4E /* FeedDataStore.swift in Sources */,
+				2B5BE17820C5540600A5BBB7 /* UIViewController+ErrorAlert.swift in Sources */,
 				F9787D441E661DD500778A4E /* UIViewController+BackButtonHandler.m in Sources */,
 				F9787D301E651AFA00778A4E /* DetailTableViewController.swift in Sources */,
 				F9787D361E651B3000778A4E /* ImageCacheHandler.swift in Sources */,
@@ -501,7 +533,7 @@
 				F9787D2A1E651A7F00778A4E /* CategoriesTableViewController.swift in Sources */,
 				F9787D201E651A0800778A4E /* CategoryTableViewCell.swift in Sources */,
 				F9787D281E651A5900778A4E /* Category.swift in Sources */,
-				F9787D321E651B1300778A4E /* NetworkHandler.swift in Sources */,
+				F9787D321E651B1300778A4E /* FeedFetcher.swift in Sources */,
 				2B79913920C49F9700A51A6F /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

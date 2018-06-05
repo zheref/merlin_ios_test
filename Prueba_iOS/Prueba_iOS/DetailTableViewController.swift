@@ -22,9 +22,9 @@ class DetailTableViewController: UITableViewController {
     
     // MARK: Outlets
     
-    @IBOutlet var appImage: UIImageView!
-    @IBOutlet var appTitle: UILabel!
-    @IBOutlet var appDescription: UILabel!
+    @IBOutlet var imageView: UIImageView!
+    @IBOutlet var titleLabel: UILabel!
+    @IBOutlet var descriptionLabel: UILabel!
     
     // MARK: Lifecycle
     
@@ -38,32 +38,7 @@ class DetailTableViewController: UITableViewController {
             self.navigationItem.rightBarButtonItem = nil
         }
         
-        self.appTitle.text = self.item?.title
-        self.appDescription.text = self.item?.summitText
-        
-        var imageUlr: String?
-        
-        if let bannerImg = self.item!.bannerImg
-        {
-            imageUlr = bannerImg
-        }
-        else if let iconImg = self.item!.iconImg
-        {
-            imageUlr = iconImg
-        }
-        
-        ImageCacheHandler().imageForUrl(imageUlr) { (image) in
-            if image == nil
-            {
-                self.appImage.image = UIImage(named: "no_image_black")
-            }
-            else
-            {
-                self.appImage.image = image
-            }
-            
-            self.tableView.reloadData()
-        }
+        populateData()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -74,18 +49,49 @@ class DetailTableViewController: UITableViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    // MARK: Private operations
+    
+    private func populateData() {
+        titleLabel.text = item?.title
+        descriptionLabel.text = item?.summitText
+        
+        var imageUrl: String?
+        
+        if let bannerImg = item?.bannerImg {
+            imageUrl = bannerImg
+        } else if let iconImg = item?.iconImg {
+            imageUrl = iconImg
+        }
+        
+        if let imageUrl = imageUrl {
+            ImageCacheHandler().imageFor(urlString: imageUrl) { [weak self] (image) in
+                DispatchQueue.main.async { [weak self] in
+                    if let image = image {
+                        self?.imageView.image = image
+                    } else {
+                        self?.imageView.image = UIImage(named: "no_image_black")
+                    }
+                    
+                    self?.tableView.reloadData()
+                }
+            }
+        }
+    }
+    
+    // MARK: Actions
 
     @IBAction func dismissController(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
+        dismiss(animated: true, completion: nil)
     }
     
     override func navigationShouldPopOnBackButton() -> Bool {
-        if ((self.traitCollection.userInterfaceIdiom == UIUserInterfaceIdiom.phone && self.traitCollection.displayScale == 3.0)) {
-            self.navigationController?.navigationBar.setBackgroundImage(nil, for: UIBarMetrics.default)
-            self.navigationController?.navigationBar.shadowImage = nil;
+        if traitCollection.userInterfaceIdiom == .phone && traitCollection.displayScale == 3.0 {
+            navigationController?.navigationBar.setBackgroundImage(nil, for: UIBarMetrics.default)
+            navigationController?.navigationBar.shadowImage = nil
         }
         
-        return true;
+        return true
     }
     
     // MARK: - Table view data source
@@ -93,37 +99,5 @@ class DetailTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat{
         return Constants.contentCellHeight
     }
-    
-    /*
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
-        return cell
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

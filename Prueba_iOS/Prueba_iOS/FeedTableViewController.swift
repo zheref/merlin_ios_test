@@ -18,7 +18,6 @@ class FeedTableViewController: UITableViewController {
     // MARK: Stored properties
 
     var dataSource: Results<FeedItem>?
-    var imageHandler: ImageCacheHandler = ImageCacheHandler()
     var category: Category?
     var realm = try! Realm()
     
@@ -64,7 +63,8 @@ class FeedTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
-        let cell = tableView.dequeueReusableCell(withIdentifier: "AppCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: K.CellIdentifier.FeedItemCell,
+                                                 for: indexPath)
         
         if let feedCell = cell as? FeedItemTableViewCell,
             let dataSource = dataSource {

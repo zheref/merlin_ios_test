@@ -10,53 +10,41 @@ import UIKit
 
 class ImageCacheHandler: NSObject {
 
-    func imageNameFrom(_ url: String?) -> String?{
-        
-        if let url = url
-        {
-            let urlSeparated: Array<String> = url.components(separatedBy: "/")
-            return urlSeparated.last;
-        }
-        
-        return nil
+    func imageNameFrom(urlString: String) -> String? {
+        let urlSeparated = urlString.components(separatedBy: "/")
+        return urlSeparated.last
     }
     
-    func imageForUrl(_ url: String?, andReturn block: @escaping (_ image: UIImage?) -> Void) {
+    func imageFor(urlString: String, andReturn block: @escaping (_ image: UIImage?) -> Void) {
+        let tmpFolderUrl: URL = URL.init(fileURLWithPath: NSTemporaryDirectory(),
+                                         isDirectory: true)
         
-        let tmpFolderUrl: URL = URL.init(fileURLWithPath: NSTemporaryDirectory(), isDirectory: true)
-        
-        if let imageName = self.imageNameFrom(url)
-        {
+        if let imageName = imageNameFrom(urlString: urlString) {
             let imageUrl: URL = tmpFolderUrl.appendingPathComponent(imageName)
             
-            if let cacheImage = UIImage(contentsOfFile: imageUrl.path)
-            {
-                block(cacheImage); return
+            if let cacheImage = UIImage(contentsOfFile: imageUrl.path) {
+                block(cacheImage)
+                return
             }
                 
-            let sesion: URLSession = URLSession(configuration: URLSessionConfiguration.default)
-            let set: CharacterSet = CharacterSet.urlQueryAllowed
-            let imageNameEncoded: String = url!.addingPercentEncoding(withAllowedCharacters: set)!
+            let sesion = URLSession(configuration: URLSessionConfiguration.default)
+            let set = CharacterSet.urlQueryAllowed
+            let imageNameEncoded = urlString.addingPercentEncoding(withAllowedCharacters: set)!
             let imageServerUrl: URL? = URL(string: imageNameEncoded)
             
-            if let imageServerUrl = imageServerUrl
-            {
+            if let imageServerUrl = imageServerUrl {
                 let task: URLSessionDataTask = sesion.dataTask(with: imageServerUrl) { (data, urlResponse, error) in
- 
                     try! data!.write(to: imageUrl)
                     let imageToCache = UIImage(data: data!)
+                    
                     block(imageToCache)
-                };
+                }
                 
-                task.resume();
-            }
-            else
-            {
+                task.resume()
+            } else {
                 block(nil)
             }
-        }
-        else
-        {
+        } else {
             block(nil)
         }
     }
