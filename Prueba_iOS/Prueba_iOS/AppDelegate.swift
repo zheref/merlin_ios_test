@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import EasyAnimation
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -20,6 +21,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         {
             splitViewController.preferredDisplayMode = UISplitViewControllerDisplayMode.primaryOverlay //TODO: This line is intenter to be erased by the developer
         }
+        
+        EasyAnimation.enable()
 
         return true
     }

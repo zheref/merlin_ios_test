@@ -31,7 +31,7 @@ class CategoriesTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         clearsSelectionOnViewWillAppear = true
-        loadData()
+        load()
         super.viewDidLoad()
     }
     
@@ -42,7 +42,7 @@ class CategoriesTableViewController: UITableViewController {
     
     // MARK: Private operations
     
-    private func loadData() {
+    private func load() {
         let manager = AFNetworkReachabilityManager.shared()
         
         manager.setReachabilityStatusChange { [weak self] (status) in

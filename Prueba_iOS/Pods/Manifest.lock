@@ -14,6 +14,7 @@ PODS:
   - AFNetworking/Serialization (3.2.1)
   - AFNetworking/UIKit (3.2.1):
     - AFNetworking/NSURLSession
+  - EasyAnimation (2.0.2)
   - Realm (3.6.0):
     - Realm/Headers (= 3.6.0)
   - Realm/Headers (3.6.0)
@@ -23,22 +24,25 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking
+  - EasyAnimation
   - RealmSwift
   - SwiftyMarkdown
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - AFNetworking
+    - EasyAnimation
     - Realm
     - RealmSwift
     - SwiftyMarkdown
 
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
+  EasyAnimation: 977ef673efe8ce62447807eedb380a77b189dc80
   Realm: 08b464b462d4f31bbd4ba5f5a1c8722ef0a700b7
   RealmSwift: 973e1499c44ab571f894c2c908e2db450be280c3
   SwiftyMarkdown: 743af3e87931391bc4836b825fec3d98785b2e3a
 
-PODFILE CHECKSUM: 816769c17d15d30ebaf09c2d07fe35db463bbd02
+PODFILE CHECKSUM: eb828df644dff0ff6a235335376f3dc93da9917a
 
 COCOAPODS: 1.5.0

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import EasyAnimation
 
 class FeedItemTableViewCell: UITableViewCell {
     
@@ -59,6 +60,12 @@ class FeedItemTableViewCell: UITableViewCell {
                     } else {
                         self?.picImageView.image = UIImage(named: "no_image_black")
                     }
+                    
+                    self?.picImageView.layer.frame.size = CGSize(width: 20.0, height: 20.0)
+                    
+                    UIView.animate(withDuration: 1.0, animations: {
+                        self?.picImageView.layer.frame.size = CGSize(width: 85.0, height: 85.0)
+                    })
                 }
             })
         }
