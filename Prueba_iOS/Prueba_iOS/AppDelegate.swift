@@ -42,13 +42,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-}
-
-extension AppDelegate: UISplitViewControllerDelegate {
-    // Collapse the secondary view controller onto the primary view controller.
-    func splitViewController(_ splitViewController: UISplitViewController, collapseSecondary secondaryViewController: UIViewController, onto primaryViewController: UIViewController) -> Bool {
+    
+    func application(_ application: UIApplication, supportedInterfaceOrientationsFor window: UIWindow?) -> UIInterfaceOrientationMask {
         
-        return true
+        //TODO: Erase this code, the developer must put it again, all orientations only is supported on iPad and iphone plus
+        if window?.traitCollection.userInterfaceIdiom == UIUserInterfaceIdiom.pad ||
+            (window?.traitCollection.userInterfaceIdiom == UIUserInterfaceIdiom.phone && window?.traitCollection.displayScale == 3.0) {
+            return UIInterfaceOrientationMask.all
+        } else {
+            return UIInterfaceOrientationMask.portrait
+        }
     }
+    
 }
 
