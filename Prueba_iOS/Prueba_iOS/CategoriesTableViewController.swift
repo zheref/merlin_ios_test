@@ -15,7 +15,7 @@ class CategoriesTableViewController: UITableViewController {
     // MARK: Subtypes
     
     struct Constants {
-        static let cellHeight: CGFloat = 67.0
+        static let cellHeight: CGFloat = 65.0
     }
     
     enum ControllerError : Error {
@@ -30,6 +30,7 @@ class CategoriesTableViewController: UITableViewController {
     // MARK: Lifecycle
     
     override func viewDidLoad() {
+        clearsSelectionOnViewWillAppear = true
         loadData()
         super.viewDidLoad()
     }

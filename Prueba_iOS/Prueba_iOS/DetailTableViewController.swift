@@ -23,7 +23,6 @@ class DetailTableViewController: UITableViewController {
     // MARK: Outlets
     
     @IBOutlet var imageView: UIImageView!
-    @IBOutlet var titleLabel: UILabel!
     @IBOutlet var descriptionLabel: UILabel!
     
     // MARK: Lifecycle
@@ -53,7 +52,10 @@ class DetailTableViewController: UITableViewController {
     // MARK: Private operations
     
     private func populateData() {
-        titleLabel.text = item?.title
+        if let heading = item?.title {
+            title = heading
+        }
+        
         descriptionLabel.text = item?.summitText
         
         var imageUrl: String?

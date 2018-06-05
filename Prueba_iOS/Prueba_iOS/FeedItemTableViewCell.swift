@@ -12,9 +12,9 @@ class FeedItemTableViewCell: UITableViewCell {
     
     // MARK: Outlets
     
-    @IBOutlet var appImage: UIImageView!
-    @IBOutlet var appTitle: UILabel!
-    @IBOutlet var appDescription: UILabel!
+    @IBOutlet var picImageView: UIImageView!
+    @IBOutlet var titleLabel: UILabel!
+    @IBOutlet var descriptionLabel: UILabel!
     
     // MARK: Lifecycle
     
@@ -30,8 +30,8 @@ class FeedItemTableViewCell: UITableViewCell {
     // MARK: Operations
     
     func set(model: FeedItem) {
-        appTitle.text = model.title
-        appDescription.text = model.summitText
+        titleLabel.text = model.title
+        descriptionLabel.text = model.summitText
         accessoryType = .disclosureIndicator
         
         var imageUrl: String?
@@ -42,13 +42,16 @@ class FeedItemTableViewCell: UITableViewCell {
             imageUrl = bannerImg
         }
         
+        picImageView.layer.masksToBounds = true
+        picImageView.layer.cornerRadius = picImageView.bounds.width / 2
+        
         if let imageUrl = imageUrl {
             ImageCacher.shared.image(forUrlString: imageUrl, completion: { [weak self] (image) in
                 DispatchQueue.main.async {
                     if let image = image {
-                        self?.appImage.image = image
+                        self?.picImageView.image = image
                     } else {
-                        self?.appImage.image = UIImage(named: "no_image_black")
+                        self?.picImageView.image = UIImage(named: "no_image_black")
                     }
                 }
             })
